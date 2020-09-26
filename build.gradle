@@ -11,6 +11,12 @@ repositories {
     mavenCentral()
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'ZombieTerminator.Game'
+    }
+}
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

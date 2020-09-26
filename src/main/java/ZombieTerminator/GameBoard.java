@@ -201,12 +201,12 @@ public class GameBoard {
         jbutton.setBackground(Color.BLUE);
         jbutton.setOpaque(true);
         jbutton.setFont(new Font("Arial", Font.PLAIN, 40));
-        jbutton.addActionListener(e -> handleControllerButtonClick(e, this, jbutton.getText()));
+        jbutton.addActionListener(e -> handleControllerButtonClick(e, jbutton.getText()));
         panel.add(jbutton);
         return jbutton;
     }
 
-    private void handleControllerButtonClick(ActionEvent e, GameBoard gb, String move) {
+    private void handleControllerButtonClick(ActionEvent e, String move) {
         turnCount++;
         turnDescriber.setText(String.format(TURN_INFO, turnCount));
         participantMove(player, move);
@@ -222,7 +222,7 @@ public class GameBoard {
 
     private void initializeZombies() {
         zombies = new ArrayList<>();
-        for(int i = 1; i<= 1; i++) {
+        for(int i = 1; i<= 30; i++) {
             zombies.add(new Zombie(random.nextInt(BOARD_X_SIZE), random.nextInt(BOARD_Y_SIZE)));
         }
     }
